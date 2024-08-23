@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Users;
 
+use App\Models\Roles\Role;
+use App\Models\Statuses\Status;
 use App\Models\Users\User;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -77,7 +79,8 @@ class Table extends Component
         }
 
         $users = $usersQuery->get();
-
-        return view('users.table', ['users' => $users]);
+        $roles = Role::all();
+        $statuses = Status::all();
+        return view('users.table', ['users' => $users, 'roles' => $roles, 'statuses' => $statuses]);
     }
 }
