@@ -1,4 +1,4 @@
-<ul class="space-y-2 pt-3 font-medium">
+<ul class="space-y-2 font-medium">
     <li>
         <a href="{{ route('admin.calendar') }}"
             class="{{ str_starts_with(Route::currentRouteName(), 'admin') ? 'bg-[#02225A] text-white' : '' }} flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-5 group hover:text-[#02225A] hover:bg-[#FDC700]">

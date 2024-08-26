@@ -52,7 +52,7 @@
 
     @include('layouts.admin.navbar')
 
-    <div class="md:p-5 p-4 mt-16 flex-grow flex md:ml-64">
+    <div class="md:p-5 p-4 mt-14 flex-grow flex md:ml-64">
         @yield('content')
     </div>
     @livewireScripts
