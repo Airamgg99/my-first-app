@@ -14,28 +14,13 @@
             ]) !!}
             <div class="flex-grow">
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.create', [
-                        'text' => 'Name',
-                        'type' => 'text',
-                        'name' => 'name',
-                        'required' => 'required',
-                    ])
+                    <x-inputs.texts.create text="Name" type="text" name="name" required="required" />
                 </div>
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.create', [
-                        'text' => 'Email',
-                        'type' => 'email',
-                        'name' => 'email',
-                        'required' => 'required',
-                    ])
+                    <x-inputs.texts.create text="Email" type="email" name="email" required="required" />
                 </div>
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.create', [
-                        'text' => 'Password',
-                        'type' => 'password',
-                        'name' => 'password',
-                        'required' => 'required',
-                    ])
+                    <x-inputs.texts.create text="Password" type="password" name="password" required="false" />
                 </div>
                 <div class="mb-6">
                     @include('components.inputs.selectize.create', [

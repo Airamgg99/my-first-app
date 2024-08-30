@@ -13,13 +13,7 @@
             ]) !!}
             <div class="flex-grow">
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.edit', [
-                        'text' => 'Name',
-                        'type' => 'text',
-                        'name' => 'name',
-                        'required' => 'required',
-                        'value' => $contract_type->name,
-                    ])
+                    <x-inputs.texts.edit text="Name" type="text" name="name" required="required" :value="$contract_type->name" />
                 </div>
                 <div class="mb-6">
                     @include('components.inputs.selectize.multiple.edit', [

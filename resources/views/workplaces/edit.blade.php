@@ -13,22 +13,11 @@
             ]) !!}
             <div class="flex-grow">
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.edit', [
-                        'text' => 'Name',
-                        'type' => 'text',
-                        'name' => 'name',
-                        'required' => 'required',
-                        'value' => $workplace->name,
-                    ])
+                    <x-inputs.texts.edit text="Name" type="text" name="name" required="required" :value="$workplace->name" />
                 </div>
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.edit', [
-                        'text' => 'Address',
-                        'type' => 'text',
-                        'name' => 'address',
-                        'required' => 'required',
-                        'value' => $workplace->address,
-                    ])
+                    <x-inputs.texts.edit text="Address" type="text" name="address" required="required"
+                        :value="$workplace->address" />
                 </div>
                 <div class="mb-6">
                     @include('components.inputs.selectize.multiple.edit', [

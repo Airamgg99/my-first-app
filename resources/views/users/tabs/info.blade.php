@@ -8,31 +8,15 @@
     <div class="flex flex-row w-full">
         <div class="flex-grow pr-4">
             <div class="mb-6 w-full">
-                @include('components.inputs.texts.edit', [
-                    'text' => 'Name',
-                    'type' => 'text',
-                    'name' => 'name',
-                    'required' => 'required',
-                    'value' => $user->name,
-                ])
+                <x-inputs.texts.edit text="Name" type="text" name="name" required="required" :value="$user->name" />
             </div>
             <div class="mb-6 w-full">
-                @include('components.inputs.texts.edit', [
-                    'text' => 'Email',
-                    'type' => 'email',
-                    'name' => 'email',
-                    'required' => 'required',
-                    'value' => $user->email,
-                ])
+                <x-inputs.texts.edit text="Email" type="email" name="email" required="required"
+                    :value="$user->email" />
             </div>
             <div class="mb-6 w-full">
-                @include('components.inputs.texts.edit', [
-                    'text' => 'New Password',
-                    'type' => 'password',
-                    'name' => 'password',
-                    'required' => null,
-                    'value' => null,
-                ])
+                <x-inputs.texts.edit text="New Password" type="password" name="password" required="null"
+                    :value="null" />
             </div>
             <div class="mb-6">
                 @include('components.inputs.selectize.edit', [

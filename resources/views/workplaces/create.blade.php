@@ -13,20 +13,10 @@
             ]) !!}
             <div class="flex-grow">
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.create', [
-                        'text' => 'Name',
-                        'type' => 'text',
-                        'name' => 'name',
-                        'required' => 'required',
-                    ])
+                    <x-inputs.texts.create text="Name" type="text" name="name" required="required" />
                 </div>
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.create', [
-                        'text' => 'Address',
-                        'type' => 'text',
-                        'name' => 'address',
-                        'required' => 'required',
-                    ])
+                    <x-inputs.texts.create text="Address" type="text" name="address" required="required" />
                 </div>
                 <div class="mb-6">
                     @include('components.inputs.selectize.multiple.create', [
