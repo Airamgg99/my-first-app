@@ -2,17 +2,12 @@
     <div class="w-full">
         <div class="flex flex-col sm:flex-row justify-between space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
             <div class="flex space-x-3 items-center justify-start">
-                @include('components.buttons.toggleTable', [
-                    'toggle' => 'toggleUnlinkedWorkplaces',
-                    'showUnlinked' => $showUnlinkedWorkplace,
-                ])
+                <x-buttons.toggleTable toggle="toggleUnlinkedWorkplaces" :showUnlinked="$showUnlinkedWorkplace" />
             </div>
         </div>
         @if (!$showUnlinkedWorkplace)
             <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
-                @include('components.inputs.search', [
-                    'search' => 'Workplaces search',
-                ])
+                <x-inputs.search search="Workplaces search" />
             </div>
             {{-- * Tabla responsive pantallas medias y grandes * --}}
             <div class="hidden sm:block">
@@ -34,9 +29,7 @@
                                     {{ $workplace->address }}
                                 </td>
                                 <td class="px-6 py-4 flex justify-center">
-                                    @include('components.buttons.unlink', [
-                                        'id' => $workplace->id,
-                                    ])
+                                    <x-buttons.unlink :id="$workplace->id" />
                                 </td>
                             </tr>
                         @endforeach
@@ -69,9 +62,7 @@
                                 </td>
                                 <td
                                     class="border-grey-light border hover:bg-gray-100 h-16 p-3 flex justify-center content-center">
-                                    @include('components.buttons.unlink', [
-                                        'id' => $workplace->id,
-                                    ])
+                                    <x-buttons.unlink :id="$workplace->id" />
                                 </td>
                             </tr>
                         @endforeach
@@ -94,9 +85,6 @@
     </div>
 
     <div class="flex justify-between mt-auto pt-3">
-        @include('components.buttons.back', [
-            'route' => route('users.index'),
-            'text' => 'Volver',
-        ])
+        <x-buttons.back :route="route('users.index')" />
     </div>
 </div>

@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="w-full h-full flex flex-col">
-        @include('components.breadcrumbs.users')
+        <x-breadcrumbs.users />
         <div class="p-4 border-2 border-[#1B3D73] border rounded-lg h-full flex flex-col">
-            @include('components.headers.header', ['text' => 'Add User'])
+            <x-headers.header text="Add User" />
             {!! Form::open([
                 'route' => 'users.store',
                 'method' => 'POST',
@@ -68,13 +68,8 @@
                 </div>
             </div>
             <div class="flex justify-between mt-auto">
-                @include('components.buttons.back', [
-                    'route' => route('users.index'),
-                    'text' => 'Back',
-                ])
-                @include('components.buttons.submit', [
-                    'text' => 'Submit',
-                ])
+                <x-buttons.back :route="route('users.index')" />
+                <x-buttons.submit />
             </div>
         </div>
         {!! Form::close() !!}

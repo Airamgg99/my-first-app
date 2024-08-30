@@ -1,18 +1,13 @@
 <div>
     <div>
-        @include('components.breadcrumbs.workplaces')
+        <x-breadcrumbs.workplaces />
         <div class="sm:rounded-lg relative overflow-hidden">
             <div class="flex flex-col sm:flex-row align-center justify-between space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
                 <div class="justify-start">
-                    @include('components.buttons.add', [
-                        'route' => route('workplaces.create'),
-                        'text' => 'Add workplace',
-                    ])
-                    @include('components.buttons.download')
+                    <x-buttons.add :route="route('workplaces.create')" text="Add workplace" />
+                    <x-buttons.download />
                 </div>
-                @include('components.inputs.search', [
-                    'search' => 'Workplace search',
-                ])
+                <x-inputs.search search="Workplace search" />
             </div>
 
             <div class="overflow-x-auto">
@@ -46,21 +41,13 @@
                                     </td>
                                     <td class="px-6 py-4 text-center">
                                         @foreach ($workplace->users as $user)
-                                            @include('components.badges.tooltip', [
-                                                'id' => 'user_' . $user->id,
-                                                'badgeText' => $user->name,
-                                                'tooltipText' => $user->email,
-                                                'trigger' => 'hover',
-                                            ])
+                                            <x-badges.tooltip :id="'user_' . $user->id" :badgeText="$user->name" :tooltipText="$user->email"
+                                                trigger="hover" />
                                         @endforeach
                                     </td>
                                     <td class="px-6 py-4 flex justify-center">
-                                        @include('components.buttons.edit', [
-                                            'route' => route('workplaces.edit', $workplace->id),
-                                        ])
-                                        @include('components.buttons.delete', [
-                                            'id' => $workplace->id,
-                                        ])
+                                        <x-buttons.edit :route="route('workplaces.edit', $workplace->id)" />
+                                        <x-buttons.delete :id="$workplace->id" />
                                     </td>
                                 </tr>
                             @endforeach
@@ -93,21 +80,13 @@
                                 <td
                                     class="border-grey-light border hover:bg-gray-100 h-16 p-3 text-center content-center">
                                     @foreach ($workplace->users as $user)
-                                        @include('components.badges.tooltip', [
-                                            'id' => 'user_' . $user->id,
-                                            'badgeText' => $user->name,
-                                            'tooltipText' => $user->email,
-                                            'trigger' => 'hover',
-                                        ])
+                                        <x-badges.tooltip :id="'user_' . $user->id" :badgeText="$user->name" :tooltipText="$user->email"
+                                            trigger="hover" />
                                     @endforeach
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 h-16 p-3 flex justify-center">
-                                    @include('components.buttons.edit', [
-                                        'route' => route('workplaces.edit', $workplace->id),
-                                    ])
-                                    @include('components.buttons.delete', [
-                                        'id' => $workplace->id,
-                                    ])
+                                    <x-buttons.edit :route="route('workplaces.edit', $workplace->id)" />
+                                    <x-buttons.delete :id="$workplace->id" />
                                 </td>
                             </tr>
                         @endforeach

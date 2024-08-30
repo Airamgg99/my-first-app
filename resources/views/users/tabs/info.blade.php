@@ -74,13 +74,8 @@
         </div>
     </div>
     <div class="flex justify-between mt-auto">
-        @include('components.buttons.back', [
-            'route' => route('users.index'),
-            'text' => 'Back',
-        ])
-        @include('components.buttons.submit', [
-            'text' => 'Submit',
-        ])
+        <x-buttons.back :route="route('users.index')" />
+        <x-buttons.submit />
     </div>
     {!! Form::close() !!}
 </div>

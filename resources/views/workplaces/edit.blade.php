@@ -5,7 +5,7 @@
     <div class="w-full h-full flex flex-col">
         @include('components.breadcrumbs.workplaces')
         <div class="p-4 border-2 border-[#1B3D73] border rounded-lg flex flex-col h-full">
-            @include('components.headers.header', ['text' => 'Edit Workplace'])
+            <x-headers.header text="Edit Workplace" />
             {!! Form::open([
                 'route' => ['workplaces.update', $workplace->id],
                 'method' => 'PUT',
@@ -44,13 +44,8 @@
                 </div>
             </div>
             <div class="flex justify-between mt-4">
-                @include('components.buttons.back', [
-                    'route' => route('workplaces.index'),
-                    'text' => 'Back',
-                ])
-                @include('components.buttons.submit', [
-                    'text' => 'Submit',
-                ])
+                <x-buttons.back :route="route('workplaces.index')" />
+                <x-buttons.submit />
             </div>
             {!! Form::close() !!}
         </div>

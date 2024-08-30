@@ -4,11 +4,8 @@
         <div class="sm:rounded-lg relative overflow-hidden">
             <div class="flex flex-col sm:flex-row align-center justify-between space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
                 <div class="justify-start">
-                    @include('components.buttons.add', [
-                        'route' => route('users.create'),
-                        'text' => 'Add user',
-                    ])
-                    @include('components.buttons.download')
+                    <x-buttons.add :route="route('users.create')" text="Add user" />
+                    <x-buttons.download />
                 </div>
                 @include('components.inputs.select', [
                     'name' => 'role_id',
@@ -34,9 +31,7 @@
                     <label for="showDeleted" class="text-sm font-medium text-gray-700">Deleted Users</label>
                     <input type="checkbox" id="showDeleted" wire:model="showDeleted" class="form-checkbox">
                 </div>
-                @include('components.inputs.search', [
-                    'search' => 'User search',
-                ])
+                <x-inputs.search search="User search" />
             </div>
             <div class="overflow-x-auto">
                 @if ($showDeleted)
@@ -160,10 +155,8 @@
                                         <td class="px-6 py-4 text-center">{{ $user->role->role }}</td>
                                         <td class="px-6 py-4 text-center">{{ $user->status->status }}</td>
                                         <td class="px-6 py-4 text-center">
-                                            @include('components.buttons.edit', [
-                                                'route' => route('users.edit', $user->id),
-                                            ])
-                                            @include('components.buttons.delete', ['id' => $user->id])
+                                            <x-buttons.edit :route="route('users.edit', $user->id)" />
+                                            <x-buttons.delete :id="$user->id" />
                                         </td>
                                     </tr>
                                 @endforeach
@@ -201,10 +194,8 @@
                                             {{ $user->status->status }}</td>
                                         <td
                                             class="border-grey-light border hover:bg-gray-100 h-16 p-3 text-center content-center">
-                                            @include('components.buttons.edit', [
-                                                'route' => route('users.edit', $user->id),
-                                            ])
-                                            @include('components.buttons.delete', ['id' => $user->id])
+                                            <x-buttons.edit :route="route('users.edit', $user->id)" />
+                                            <x-buttons.delete :id="$user->id" />
                                         </td>
                                     </tr>
                                 @endforeach

@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="w-full h-full flex flex-col">
-        @include('components.breadcrumbs.contract_types')
+        <x-breadcrumbs.contract_types />
         <div class="p-4 border-2 border-[#1B3D73] border rounded-lg flex flex-col h-full">
-            @include('components.headers.header', ['text' => 'Add Contract type'])
+            <x-headers.header text="Add Contract type" />
             {!! Form::open([
                 'route' => 'contract_types.store',
                 'method' => 'POST',
@@ -13,12 +13,7 @@
             ]) !!}
             <div class="flex-grow">
                 <div class="mb-6 w-full">
-                    @include('components.inputs.texts.create', [
-                        'text' => 'Name',
-                        'type' => 'text',
-                        'name' => 'name',
-                        'required' => 'required',
-                    ])
+                    <x-inputs.texts.create text="Name" type="text" name="name" required="required" />
                 </div>
                 <div class="mb-6">
                     @include('components.inputs.selectize.multiple.create', [
@@ -33,13 +28,8 @@
                 </div>
             </div>
             <div class="flex justify-between mt-4">
-                @include('components.buttons.back', [
-                    'route' => route('contract_types.index'),
-                    'text' => 'Back',
-                ])
-                @include('components.buttons.submit', [
-                    'text' => 'Submit',
-                ])
+                <x-buttons.back :route="route('contract_types.index')" />
+                <x-buttons.submit />
             </div>
             {!! Form::close() !!}
         </div>

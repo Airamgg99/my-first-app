@@ -1,8 +1,6 @@
 <div class="w-full">
     <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
-        @include('components.inputs.search', [
-            'search' => 'Unlinked jobs search',
-        ])
+        <x-inputs.search search="Unlinked jobs search" />
     </div>
 
     {{-- * Tabla responsive pantallas medias y grandes  * --}}
@@ -21,9 +19,7 @@
                             {{ $job->name }}
                         </td>
                         <td class="px-6 py-4 flex justify-center">
-                            @include('components.buttons.link', [
-                                'id' => $job->id,
-                            ])
+                            <x-buttons.link :id="$job->id" />
                         </td>
                     </tr>
                 @endforeach
@@ -50,9 +46,7 @@
                         </td>
                         <td
                             class="border-grey-light border hover:bg-gray-100 h-16 p-3 flex justify-center content-center">
-                            @include('components.buttons.link', [
-                                'id' => $job->id,
-                            ])
+                            <x-buttons.link :id="$job->id" />
                         </td>
                     </tr>
                 @endforeach

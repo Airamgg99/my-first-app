@@ -2,17 +2,12 @@
     <div class="w-full">
         <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
             <div class="flex space-x-3 items-center justify-between">
-                @include('components.buttons.toggleTable', [
-                    'toggle' => 'toggleUnlinkedJobs',
-                    'showUnlinked' => $showUnlinkedJob,
-                ])
+                <x-buttons.toggleTable toggle="toggleUnlinkedJobs" :showUnlinked="$showUnlinkedJob" />
             </div>
         </div>
         @if (!$showUnlinkedJob)
             <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
-                @include('components.inputs.search', [
-                    'search' => 'Jobs search',
-                ])
+                <x-inputs.search search="Jobs search" />
             </div>
             {{-- * Tabla responsive pantallas medias y grandes * --}}
             <div class="hidden sm:block">
@@ -30,9 +25,7 @@
                                     {{ $job->name }}
                                 </td>
                                 <td class="px-6 py-4 flex justify-center">
-                                    @include('components.buttons.unlink', [
-                                        'id' => $job->id,
-                                    ])
+                                    <x-buttons.unlink :id="$job->id" />
                                 </td>
                             </tr>
                         @endforeach
@@ -60,9 +53,7 @@
                                 </td>
                                 <td
                                     class="border-grey-light border hover:bg-gray-100 h-16 p-3 flex justify-center content-center">
-                                    @include('components.buttons.unlink', [
-                                        'id' => $job->id,
-                                    ])
+                                    <x-buttons.unlink :id="$job->id" />
                                 </td>
                             </tr>
                         @endforeach
@@ -83,9 +74,6 @@
     </div>
 
     <div class="flex justify-between mt-auto pt-3">
-        @include('components.buttons.back', [
-            'route' => route('users.index'),
-            'text' => 'Volver',
-        ])
+        <x-buttons.back :route="route('users.index')" />
     </div>
 </div>

@@ -5,7 +5,7 @@
     <div class="w-full h-full flex flex-col">
         @include('components.breadcrumbs.contract_types')
         <div class="p-4 border-2 border-[#1B3D73] border rounded-lg flex flex-col h-full">
-            @include('components.headers.header', ['text' => 'Edit Contract type'])
+            <x-headers.header text="Edit Contract type" />
             {!! Form::open([
                 'route' => ['contract_types.update', $contract_type->id],
                 'method' => 'PUT',
@@ -35,13 +35,8 @@
                 </div>
             </div>
             <div class="flex justify-between mt-4">
-                @include('components.buttons.back', [
-                    'route' => route('contract_types.index'),
-                    'text' => 'Back',
-                ])
-                @include('components.buttons.submit', [
-                    'text' => 'Submit',
-                ])
+                <x-buttons.back :route="route('contract_types.index')" />
+                <x-buttons.submit />
             </div>
             {!! Form::close() !!}
         </div>

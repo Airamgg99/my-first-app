@@ -1,18 +1,13 @@
 <div>
     <div>
-        @include('components.breadcrumbs.contract_types')
+        <x-breadcrumbs.contract_types />
         <div class="sm:rounded-lg relative overflow-hidden">
             <div class="flex flex-col sm:flex-row align-center justify-between space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
                 <div class="justify-start">
-                    @include('components.buttons.add', [
-                        'route' => route('contract_types.create'),
-                        'text' => 'Add contract type',
-                    ])
-                    @include('components.buttons.download')
+                    <x-buttons.add :route="route('contract_types.create')" text="Add contract type" />
+                    <x-buttons.download />
                 </div>
-                @include('components.inputs.search', [
-                    'search' => 'Contract type search',
-                ])
+                <x-inputs.search search="Contract type search" />
             </div>
 
             <div class="overflow-x-auto">
@@ -40,21 +35,13 @@
                                     </td>
                                     <td class="px-6 py-4 text-center">
                                         @foreach ($contract_type->users as $user)
-                                            @include('components.badges.tooltip', [
-                                                'id' => 'user_' . $user->id,
-                                                'badgeText' => $user->name,
-                                                'tooltipText' => $user->email,
-                                                'trigger' => 'hover',
-                                            ])
+                                            <x-badges.tooltip :id="'user_' . $user->id" :badgeText="$user->name" :tooltipText="$user->email"
+                                                trigger="hover" />
                                         @endforeach
                                     </td>
                                     <td class="px-6 py-4 flex justify-center">
-                                        @include('components.buttons.edit', [
-                                            'route' => route('contract_types.edit', $contract_type->id),
-                                        ])
-                                        @include('components.buttons.delete', [
-                                            'id' => $contract_type->id,
-                                        ])
+                                        <x-buttons.edit :route="route('contract_types.edit', $contract_type->id)" />
+                                        <x-buttons.delete :id="$contract_type->id" />
                                     </td>
                                 </tr>
                             @endforeach
@@ -84,21 +71,13 @@
                                 <td
                                     class="border-grey-light border hover:bg-gray-100 h-16 p-3 text-center content-center">
                                     @foreach ($contract_type->users as $user)
-                                        @include('components.badges.tooltip', [
-                                            'id' => 'user_' . $user->id,
-                                            'badgeText' => $user->name,
-                                            'tooltipText' => $user->email,
-                                            'trigger' => 'hover',
-                                        ])
+                                        <x-badges.tooltip :id="'user_' . $user->id" :badgeText="$user->name" :tooltipText="$user->email"
+                                            trigger="hover" />
                                     @endforeach
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 h-16 p-3 flex justify-center">
-                                    @include('components.buttons.edit', [
-                                        'route' => route('contract_types.edit', $contract_type->id),
-                                    ])
-                                    @include('components.buttons.delete', [
-                                        'id' => $contract_type->id,
-                                    ])
+                                    <x-buttons.edit :route="route('contract_types.edit', $contract_type->id)" />
+                                    <x-buttons.delete :id="$contract_type->id" />
                                 </td>
                             </tr>
                         @endforeach
