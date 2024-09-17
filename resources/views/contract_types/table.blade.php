@@ -1,6 +1,6 @@
 <div>
     <div>
-        <x-breadcrumbs.contract_types />
+        <x-breadcrumbs.contract.index />
         <div class="sm:rounded-lg relative overflow-hidden">
             <div class="flex flex-col sm:flex-row align-center justify-between space-y-3 sm:space-y-0 sm:space-x-3 pb-3">
                 <div class="justify-start">

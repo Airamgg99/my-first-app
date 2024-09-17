@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="w-full h-full flex flex-col">
-        <x-breadcrumbs.users />
+        <x-breadcrumbs.users.create />
         <div class="p-4 border-2 border-[#1B3D73] border rounded-lg h-full flex flex-col">
             <x-headers.header text="Add User" />
             {!! Form::open([

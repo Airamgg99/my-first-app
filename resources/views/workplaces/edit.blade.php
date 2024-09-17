@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="w-full h-full flex flex-col">
-        @include('components.breadcrumbs.workplaces')
+        <x-breadcrumbs.workplaces.edit :workplace="$workplace" />
         <div class="p-4 border-2 border-[#1B3D73] border rounded-lg flex flex-col h-full">
             <x-headers.header text="Edit Workplace" />
             {!! Form::open([

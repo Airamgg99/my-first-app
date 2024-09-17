@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="w-full h-full flex flex-col">
-        <x-breadcrumbs.jobs />
+        <x-breadcrumbs.jobs.create />
         <div class="p-4 border-2 border-[#1B3D73] border rounded-lg flex flex-col h-full">
             <x-headers.header text="Create Job" />
             {!! Form::open([

@@ -8,6 +8,7 @@
         "php": "^7.3|^8.0",
         "blade-ui-kit/blade-icons": "^1.7",
         "blade-ui-kit/blade-ui-kit": "^0.3.4",
+        "codeat3/blade-eos-icons": "^1.14",
         "codeat3/blade-iconpark": "^1.6",
         "codeat3/blade-ikonate": "^1.5",
         "codeat3/blade-phosphor-icons": "^2.2",

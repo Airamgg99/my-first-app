@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="w-full h-full flex flex-col">
-        @include('components.breadcrumbs.users')
+        <x-breadcrumbs.users.edit :user="$user" />
 
         <div class="border-2 border-[#1B3D73] h-full flex flex-col">
             <div class="border-b border-[#1B3D73] text-[#1B3D73]">
